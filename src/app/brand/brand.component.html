@@ -1,0 +1,33 @@
+<section class="section contact-me" data-section="section4">
+  <div class="container">
+    &nbsp;
+    &nbsp; 
+    <form #frm="ngForm" (ngSubmit)="savebrand(frm.value)">
+      <div class="form-row">
+          <label for="BrandName">Brand Name</label>
+          <input type="text" name="BrandName" ngModel class="form-control" placeholder="Enter category" required>
+        </div> 
+        
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+ 
+    <div class="section-heading">
+      <h2 >Brand List</h2> 
+      <div class="line-dec"></div>
+      <div class="row">
+        <table class="table table-sm" style="color: aliceblue;">
+            <thead>
+              <tr>
+                <th >Brand Name</th>               
+            </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let rec of brandService.brands">
+                <td>{{rec.BrandName}}</td>
+              </tr>
+            </tbody>
+          </table>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,22 @@
+<section class="section contact-me" data-section="section4">
+  <div class="container">
+    <div class="section-heading">
+      <form #frm="ngForm" (ngSubmit)="loginadmin(frm.value)">
+        
+          <div>
+            <label for="Email">Email</label>
+            <input type="email" name="Email" ngModel class="form-control" placeholder="abcd@gmail.com" required>
+          </div>
+          &nbsp;
+          <div>
+            <label for="Password">Password</label>
+            <input type="password" name="Password" ngModel class="form-control" placeholder="Password" required>
+          </div>
+       
+          <b class="text-danger"> {{msg}} </b>
+          &nbsp;
+        <button type="submit" class="btn btn-primary">Login</button>
+      </form>
+  </div>
+  </div>
+</section>

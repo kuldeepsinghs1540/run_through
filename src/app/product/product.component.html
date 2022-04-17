@@ -1,0 +1,82 @@
+<section class="section contact-me" data-section="section4">
+  <div class="container">
+    <div class="section-heading">
+      <h2 >Add New Product</h2> 
+      <form #frm="ngForm" (ngSubmit)="saveproduct(frm.value)">
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="ProductName">Product Name</label>
+            <input type="text" name="ProductName" ngModel class="form-control" placeholder="enter Product Name" required>
+          </div>
+          <div class="form-group col-md-6">
+            <label for="ProductImage">Product Image</label>
+            <input type="text" name="ProductImage" ngModel class="form-control" placeholder="upload Product Image" required>
+          </div>
+        </div>
+        <div class="form-row">
+
+          <div class="form-group col-md-4">
+            <label for="Category">Category Name</label>
+            <input type="text" name="Category" ngModel class="form-control" placeholder="upload Product Image" required>
+          </div>
+          <div class="form-group col-md-4">
+            <label for="SubCategoryName">Sub-Category Name</label>
+            <input type="text" name="SubCategoryName" ngModel class="form-control" placeholder="Enter Sub-Category Name" required>
+          </div>
+          <div class="form-group col-md-4">
+            <label for="BrandName">Brand Name</label>
+            <input type="text" name="BrandName" ngModel class="form-control" placeholder="Enter Brand Name" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-4">
+          <label for="ModelNumber">Model Number</label>
+          <input type="number" name="ModelNumber" ngModel class="form-control" placeholder="Enter Model Number" required>
+        </div>
+        <div class="form-group col-md-4">
+          <label for="Stock">Total Stock</label>
+          <input type="number" name="Stock" ngModel class="form-control" placeholder="Enter Total Stock" required>
+        </div>
+        <div class="form-group col-md-4">
+          <label for="Price">Total Price</label>
+          <input type="number" name="Price" ngModel class="form-control" placeholder="Enter Total Price" required>
+        </div>
+      </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+
+      <h2 >Customer List</h2>
+      <div class="line-dec"></div>
+      <div class="row">
+        <table class="table table-sm" style="color: aliceblue;">
+            <thead>
+              <tr>
+                <th >Image</th>
+                <th >Name</th>
+                <th >Category</th>
+                <th >Sub-category</th>
+                <th >Brand</th>
+                <th >Model Number</th>
+                <th >Total Stock</th>
+                <th >Remaning Stock</th>
+                <th >Price</th>
+            </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let rec of productService.products">
+                <td>{{rec.ProductImage}}</td>
+                <td>{{rec.ProductName}}</td>
+                <td>{{rec.Category}}</td>
+                <td>{{rec.SubCategoryName}}</td>
+                <td>{{rec.BrandName}}</td>
+                <td>{{rec.ModelNumber}}</td>
+                <td>{{rec.Stock}}</td>
+                <td>{{rec.RemainingStock}}</td>
+                <td>{{rec.Price}}</td>
+              </tr>
+            </tbody>
+          </table>
+      </div>
+    </div>
+  </div>
+</section>
